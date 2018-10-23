@@ -1,0 +1,8 @@
+/sqlPatterns/
+.git
+.Java
+.JETEmitters
+.metadata
+/temp
+/code/routines/system
+/process/*.screenshot
