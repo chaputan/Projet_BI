@@ -6,3 +6,5 @@
 /temp
 /code/routines/system
 /process/*.screenshot
+/talend.project
+.project
