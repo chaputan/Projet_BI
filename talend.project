@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
-  <TalendProperties:Project xmi:id="_OAgK0dahEei7tdfXkHIDww" label="BI_Essence" description="" language="java" technicalLabel="BI_ESSENCE" local="true" author="_OB6gENahEei7tdfXkHIDww" productVersion="Talend Open Studio for Data Integration-6.4.1.20170623_1246" itemsRelationVersion="1.3" bigData="false">
+  <TalendProperties:Project xmi:id="_OAgK0dahEei7tdfXkHIDww" label="projet_bi" description="" language="java" technicalLabel="PROJET_BI" local="true" author="_OB6gENahEei7tdfXkHIDww" productVersion="Talend Open Studio for Data Integration-6.4.1.20170623_1246" itemsRelationVersion="1.3" bigData="false">
     <technicalStatus xmi:id="_OGJf0NahEei7tdfXkHIDww" label="development" code="DEV"/>
     <technicalStatus xmi:id="_OGJf0dahEei7tdfXkHIDww" label="testing" code="TEST"/>
     <technicalStatus xmi:id="_OGJf0tahEei7tdfXkHIDww" label="production" code="PROD"/>
