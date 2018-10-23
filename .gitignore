@@ -8,3 +8,5 @@ code/routines/system
 process/*.screenshot
 talend.project
 .project
+/.project
+/talend.project
