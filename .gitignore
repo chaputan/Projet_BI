@@ -1,10 +1,11 @@
-/sqlPatterns/
+sqlPatterns/
 .git
 .Java
 .JETEmitters
 .metadata
-/temp
-/code/routines/system
-/process/*.screenshot
-/talend.project
+temp
+code/routines/system
+process/*.screenshot
+talend.project
+
 .project
