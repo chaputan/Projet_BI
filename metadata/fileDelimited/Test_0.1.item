@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:DelimitedFileConnection xmi:id="_er2W0NeeEeitCq3C-VGuzQ" name="Test" dataPackage="_er2W0deeEeitCq3C-VGuzQ" Server="Localhost 127.0.0.1" FilePath="C:/Users/TEMPUN~1.002/AppData/Local/Temp/PrixCarburants_annuel_2018.xml" Format="WINDOWS" Encoding="ISO-8859-1" FieldSeparatorValue="&quot;\t&quot;" RowSeparatorValue="&quot;\n&quot;" FieldSeparatorType="Tabulation"/>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_er2W0deeEeitCq3C-VGuzQ" name="default" dataManager="_er2W0NeeEeitCq3C-VGuzQ">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_er2W0teeEeitCq3C-VGuzQ" id="_M3LbUNeeEeitCq3C-VGuzQ" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_er294NeeEeitCq3C-VGuzQ" label="Column0" length="75" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>
