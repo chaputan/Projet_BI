@@ -104,6 +104,7 @@
     <routinesParameter id="_OR75ENahEei7tdfXkHIDww" name="TalendDate"/>
     <routinesParameter id="_OSX98NahEei7tdfXkHIDww" name="TalendStringUtil"/>
     <routinesParameter id="_OSFDANahEei7tdfXkHIDww" name="TalendString"/>
+    <routinesParameter id="__q5dwOfkEeiTtLKY7wNdiQ" name="conversionTemps"/>
   </parameters>
   <node componentName="tRowGenerator" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tRowGenerator_1" show="false"/>
@@ -142,7 +143,7 @@
       <column comment="" key="false" length="10" name="annee" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="25" name="semestre" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="25" name="semestre" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="10" name="saison" nullable="false" pattern="" precision="0" sourceType="INT" type="id_String" usefulColumn="true">
@@ -160,8 +161,8 @@
         <mapperTableEntries name="jour" expression="TalendDate.formatDate(&quot;EEEE&quot;,row1.date)" type="id_String"/>
         <mapperTableEntries name="mois" expression="TalendDate.formatDate(&quot;MMMM&quot;,row1.date)" type="id_String"/>
         <mapperTableEntries name="annee" expression="TalendDate.getPartOfDate(&quot;YEAR&quot;,row1.date) " type="id_Integer"/>
-        <mapperTableEntries name="semestre" expression="&quot;test&quot;" type="id_String"/>
-        <mapperTableEntries name="saison" expression="&quot;test&quot;" type="id_String"/>
+        <mapperTableEntries name="semestre" expression="conversionTemps.getSemestre(Integer.parseInt(TalendDate.formatDate(&quot;M&quot;,row1.date))); " type="id_Integer"/>
+        <mapperTableEntries name="saison" expression="conversionTemps.getSaison(Integer.parseInt(TalendDate.formatDate(&quot;M&quot;,row1.date))); " type="id_String"/>
         <mapperTableEntries name="num_jour_mois" expression="Integer.valueOf(TalendDate.formatDate(&quot;dd&quot;,row1.date)) " type="id_Integer"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="row1" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
@@ -183,7 +184,7 @@
     <elementParameter field="TEXT" name="USER" value="&quot;projet_bi&quot;"/>
     <elementParameter field="PASSWORD" name="PASS" value="neX/QqZ9kJnoX44jCE8LKQ=="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;temps_dim&quot;"/>
-    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CLEAR"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
     <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
     <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:REPOSITORY_SCHEMA_TYPE" value="_zpE1MNbOEeiIuP5odK4jMA - temps_dim" show="false"/>
@@ -253,7 +254,7 @@
       <column comment="" key="false" length="10" name="annee" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="25" name="semestre" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="25" name="semestre" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="10" name="saison" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -274,7 +275,7 @@
       <column comment="" key="false" length="10" name="annee" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="25" name="semestre" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="25" name="semestre" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="10" name="saison" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -328,7 +329,7 @@
       <column comment="" key="false" length="10" name="annee" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="25" name="semestre" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="25" name="semestre" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="10" name="saison" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
