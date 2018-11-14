@@ -37,7 +37,7 @@ public class TypeCarburant {
     	if (nomCarburant == null) {
             ret = null;
         }
-    	else if(nomCarburant == "GPLc" || nomCarburant == "E85")
+    	else if(nomCarburant.equals("GPLc") || nomCarburant.equals("E85"))
         	ret = "autre";
         else 
         	ret = "standard";
