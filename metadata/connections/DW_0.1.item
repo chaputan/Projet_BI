@@ -13,6 +13,7 @@
     <taggedValue xmi:id="_nQ_E4dbTEeiIuP5odK4jMA" tag="DB ProductVersion" value="10.1.26-MariaDB-0+deb9u1"/>
     <taggedValue xmi:id="_nQ_E4tbTEeiIuP5odK4jMA" tag="DB IdentifierQuoteString" value="`"/>
     <parameters xmi:id="_nQEe4tbTEeiIuP5odK4jMA" key="CONN_PARA_KEY_USERNAME" value="projet_bi"/>
+    <parameters xmi:id="_uj4VoOfoEeinj4i8a_kGNg" key="CONN_PARA_KEY_MAPRDB_TABLE_NS_MAPPING" value=""/>
   </TalendMetadata:DatabaseConnection>
   <orgomg.cwm.resource.relational:Catalog xmi:id="_nRy9MNbTEeiIuP5odK4jMA" name="projet_bi" dataManager="_nQEe4NbTEeiIuP5odK4jMA">
     <ownedElement xsi:type="relational:TdTable" xmi:id="_ef_EwdkBEeiUO9wBidiUHQ" name="carburants" id="_ef_EwNkBEeiUO9wBidiUHQ" label="carburants" tableType="TABLE">
