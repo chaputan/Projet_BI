@@ -38,13 +38,30 @@ public class Horaires {
         if (ouverture == null || fermeture == null) {
             return false;
         }
+        /*
         long minOuverture = TalendDate.parseDate("HH.mm", ouverture).getTime();
         long minFermeture = TalendDate.parseDate("HH.mm", fermeture).getTime();
         if(Math.abs(minOuverture - minFermeture)<15*60*1000)
         	return true;
-        else if(Math.abs(minFermeture - minOuverture)<15*60*1000)
+        */
+        int heureOuverture = Integer.valueOf(ouverture.split(".")[0]);
+        int heureFermeture = Integer.valueOf(fermeture.split(".")[0]);
+        int minuteOuverture = Integer.valueOf(ouverture.split(".")[1]);
+        int minuteFermeture = Integer.valueOf(fermeture.split(".")[1]);
+        
+        if (heureOuverture == heureFermeture && minuteOuverture == minuteFermeture)
         	return true;
-        else 
-        	return false;
+        
+        if (heureOuverture == heureFermeture && minuteFermeture + 1 == minuteOuverture)
+        	return true;
+         
+        if (heureFermeture + 1 == heureOuverture && minuteFermeture == 59)
+        	return true;
+        
+        if (heureFermeture == 23 && minuteOuverture == 59
+        		&& heureOuverture == 0 && minuteOuverture == 0)
+        	return true;
+        
+        return false;
     }
 }
