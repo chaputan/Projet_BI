@@ -105,6 +105,10 @@
     <routinesParameter id="_OSX98NahEei7tdfXkHIDww" name="TalendStringUtil"/>
     <routinesParameter id="_OSFDANahEei7tdfXkHIDww" name="TalendString"/>
     <routinesParameter id="_NMf3EOwCEeiwlp3HGOH9wg" name="fonctions_fait"/>
+    <routinesParameter id="_1h1hMOjjEeiVKaDgU6Yufg" name="service"/>
+    <routinesParameter id="_vewrwOwVEeiug5NteajeNg" name="horaires"/>
+    <routinesParameter id="_tRuhkOwXEeiJrc7jvOn1cQ" name="Maniphoraires"/>
+    <routinesParameter id="_TWqRQOwYEeiJrc7jvOn1cQ" name="HorairesManip"/>
   </parameters>
   <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="128">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlInput_7" show="false"/>
@@ -182,11 +186,10 @@
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="station_fact" name="station_fact">
-      <column comment="" key="false" length="-1" name="idHoraire" nullable="true" pattern="" precision="-1" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="idService" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="20" name="idHoraire" nullable="true" pattern="" precision="-1" sourceType="INT" type="id_String" originalLength="20" usefulColumn="true"/>
+      <column comment="" key="false" length="20" name="idService" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="20" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="idCarburant" nullable="false" pattern="" precision="-1" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="idPdv" nullable="false" pattern="" precision="-1" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="idTrafic" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="idTemps" nullable="false" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="prix" nullable="false" pattern="" precision="-1" sourceType="DOUBLE" type="id_Double" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="rupture" nullable="true" pattern="" precision="-1" sourceType="BIT" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
@@ -196,11 +199,10 @@
       <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="station_fact">
-        <mapperTableEntries name="idHoraire" type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="idService" type="id_String" nullable="true"/>
+        <mapperTableEntries name="idHoraire" expression="HorairesManip.getHorairesId(horaires.heure_ouverture,horaires.heure_fermeture,horaires.ferme) " type="id_String" nullable="true"/>
+        <mapperTableEntries name="idService" expression="service.getServiceId(services.nom) " type="id_String" nullable="true"/>
         <mapperTableEntries name="idCarburant" expression="carburants.carburant_id " type="id_Integer"/>
         <mapperTableEntries name="idPdv" expression="Integer.parseInt(pdv.id) " type="id_Integer"/>
-        <mapperTableEntries name="idTrafic" type="id_String" nullable="true"/>
         <mapperTableEntries name="idTemps" expression="TalendDate.parseDate(&quot;yyyy-MM-dd'T'HH:mm:ss&quot;,carburants.maj) " type="id_Date"/>
         <mapperTableEntries name="prix" expression="Double.valueOf(carburants.valeur) /1000.0" type="id_Double"/>
         <mapperTableEntries name="rupture" expression="(fonctions_fait.isClosed(ruptures.date_debut,ruptures.date_fin,carburants.maj) ? true : false) " type="id_Boolean" nullable="true"/>
@@ -219,7 +221,7 @@
         <mapperTableEntries name="date_fin" expression=" " type="id_String" nullable="true"/>
         <mapperTableEntries name="id_pdv" expression="carburants.pdv_id " type="id_Integer" operator="="/>
       </inputTables>
-      <inputTables sizeState="INTERMEDIATE" name="horaires" matchingMode="ALL_MATCHES" lookupMode="LOAD_ONCE">
+      <inputTables sizeState="INTERMEDIATE" name="horaires" activateCondensedTool="true" matchingMode="ALL_MATCHES" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="heure_ouverture" type="id_String" nullable="true"/>
         <mapperTableEntries name="heure_fermeture" type="id_String" nullable="true"/>
         <mapperTableEntries name="ferme" type="id_String" nullable="true"/>
@@ -241,8 +243,8 @@
         <mapperTableEntries name="id_pdv" expression="carburants.pdv_id " type="id_Integer" nullable="true"/>
         <mapperTableEntries name="id_Carburants" expression="carburants.carburant_id " type="id_Integer" nullable="true" operator="="/>
       </inputTables>
-      <inputTables sizeState="INTERMEDIATE" name="services" matchingMode="ALL_MATCHES" lookupMode="LOAD_ONCE">
-        <mapperTableEntries name="nom" type="id_String"/>
+      <inputTables sizeState="INTERMEDIATE" name="services" activateCondensedTool="true" matchingMode="ALL_MATCHES" lookupMode="LOAD_ONCE" innerJoin="true">
+        <mapperTableEntries name="nom" expression="" type="id_String"/>
         <mapperTableEntries name="id_pdv" expression="carburants.pdv_id " type="id_Integer"/>
       </inputTables>
     </nodeData>
@@ -584,11 +586,6 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="idTrafic"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="idTemps"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -619,22 +616,20 @@
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="station_fact" name="tMysqlOutput_1">
-      <column comment="" key="false" length="-1" name="idHoraire" nullable="true" pattern="" precision="-1" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="idService" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="20" name="idHoraire" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="20" usefulColumn="true"/>
+      <column comment="" key="false" length="20" name="idService" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="20" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="idCarburant" nullable="false" pattern="" precision="-1" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="idPdv" nullable="false" pattern="" precision="-1" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="idTrafic" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="idTemps" nullable="false" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="prix" nullable="false" pattern="" precision="-1" sourceType="DOUBLE" type="id_Double" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="rupture" nullable="true" pattern="" precision="-1" sourceType="BIT" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="fermeture" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" label="station_fact" name="REJECT">
-      <column comment="" key="false" length="-1" name="idHoraire" nullable="true" pattern="" precision="-1" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="idService" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="20" name="idHoraire" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="20" usefulColumn="true"/>
+      <column comment="" key="false" length="20" name="idService" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="20" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="idCarburant" nullable="false" pattern="" precision="-1" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="idPdv" nullable="false" pattern="" precision="-1" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="idTrafic" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="idTemps" nullable="false" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="prix" nullable="false" pattern="" precision="-1" sourceType="DOUBLE" type="id_Double" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="rupture" nullable="true" pattern="" precision="-1" sourceType="BIT" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
@@ -665,8 +660,6 @@
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="idPdv"/>
       <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="idTrafic"/>
-      <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="idTemps"/>
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="prix"/>
@@ -680,11 +673,10 @@
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="station_fact" name="tLogRow_1">
-      <column comment="" key="false" length="-1" name="idHoraire" nullable="true" pattern="" precision="-1" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="idService" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="20" name="idHoraire" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="20" usefulColumn="true"/>
+      <column comment="" key="false" length="20" name="idService" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="20" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="idCarburant" nullable="false" pattern="" precision="-1" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="idPdv" nullable="false" pattern="" precision="-1" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="idTrafic" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="idTemps" nullable="false" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="DATETIME" type="id_Date" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="prix" nullable="false" pattern="" precision="-1" sourceType="DOUBLE" type="id_Double" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="rupture" nullable="true" pattern="" precision="-1" sourceType="BIT" type="id_Boolean" originalLength="-1" usefulColumn="true"/>

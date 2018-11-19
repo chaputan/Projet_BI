@@ -252,7 +252,7 @@
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="temps_dim" name="tMysqlOutput_2">
-      <column comment="" key="false" length="-1" name="idTemps" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="DATETIME" type="id_Date" originalLength="10" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="idTemps" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="DATE" type="id_Date" originalLength="10" usefulColumn="true"/>
       <column comment="" key="false" length="15" name="jour" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -274,7 +274,7 @@
       <additionalProperties key="Comment" value=""/>
     </metadata>
     <metadata connector="REJECT" label="temps_dim" name="REJECT">
-      <column comment="" key="false" length="-1" name="idTemps" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="DATETIME" type="id_Date" originalLength="10" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="idTemps" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="DATE" type="id_Date" originalLength="10" usefulColumn="true"/>
       <column comment="" key="false" length="15" name="jour" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -331,7 +331,7 @@
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="temps_dim" name="tLogRow_1">
-      <column comment="" key="false" length="-1" name="idTemps" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="DATETIME" type="id_Date" originalLength="10" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="idTemps" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="DATE" type="id_Date" originalLength="10" usefulColumn="true"/>
       <column comment="" key="false" length="15" name="jour" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
