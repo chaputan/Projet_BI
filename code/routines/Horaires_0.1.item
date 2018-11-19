@@ -44,22 +44,35 @@ public class Horaires {
         if(Math.abs(minOuverture - minFermeture)<15*60*1000)
         	return true;
         */
-        int heureOuverture = Integer.valueOf(ouverture.split(".")[0]);
-        int heureFermeture = Integer.valueOf(fermeture.split(".")[0]);
-        int minuteOuverture = Integer.valueOf(ouverture.split(".")[1]);
-        int minuteFermeture = Integer.valueOf(fermeture.split(".")[1]);
+        int heureOuverture = 0, heureFermeture = 0, minuteOuverture = 0, minuteFermeture = 0;
+        if(ouverture.contains(".") && fermeture.contains(".")){
+        	heureOuverture = Integer.valueOf(ouverture.substring(0,2));
+            heureFermeture = Integer.valueOf(fermeture.substring(0,2));
+            minuteOuverture = Integer.valueOf(ouverture.substring(3,5));
+            minuteFermeture = Integer.valueOf(fermeture.substring(3,5));
+        }
         
-        if (heureOuverture == heureFermeture && minuteOuverture == minuteFermeture)
+        // Même heure
+        if (heureOuverture == heureFermeture && Math.abs(minuteFermeture - minuteOuverture) <= 15)
+        	return true;
+        /*
+        if (heureOuverture == heureFermeture && Math.abs(minuteOuverture - minuteFermeture) <= 15)
+        	return true;
+        */
+        // Une heure de décalage
+        if (heureFermeture + 1 == heureOuverture && Math.abs(minuteOuverture +60 - minuteFermeture) <=15)
         	return true;
         
-        if (heureOuverture == heureFermeture && minuteFermeture + 1 == minuteOuverture)
-        	return true;
-         
-        if (heureFermeture + 1 == heureOuverture && minuteFermeture == 59)
+        if (heureOuverture + 1 == heureFermeture && Math.abs(minuteFermeture +60 - minuteOuverture) <=15)
         	return true;
         
-        if (heureFermeture == 23 && minuteOuverture == 59
-        		&& heureOuverture == 0 && minuteOuverture == 0)
+        // Changement de jour
+        if (heureFermeture == 23 && heureOuverture == 0
+        		&& Math.abs(minuteOuverture +60 - minuteFermeture) <=15)
+        	return true;
+        
+        if (heureOuverture == 23 && heureFermeture == 0
+        		&& Math.abs(minuteFermeture +60 - minuteOuverture) <=15)
         	return true;
         
         return false;
