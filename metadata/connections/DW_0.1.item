@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.relational="http:///orgomg/cwm/resource/relational.ecore" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
-  <TalendMetadata:DatabaseConnection xmi:id="_nQEe4NbTEeiIuP5odK4jMA" name="DW" id="_zpE1MNbOEeiIuP5odK4jMA" label="DW" dataPackage="_nRy9MNbTEeiIuP5odK4jMA" DatabaseType="MySQL" DriverClass="org.mariadb.jdbc.Driver" URL="jdbc:mariadb://51.15.165.50:3306/projet_bi?noDatetimeStringSync=true" dbVersionString="MARIADB" Port="3306" Username="projet_bi" Password="8s5j3hAqeaXDw4yeGl1HkQ==" ServerName="51.15.165.50" DatasourceName="" FileFieldName="" SID="projet_bi" SqlSynthax="Syntaxe SQL" DbmsId="mysql_id" ProductId="MYSQL" AdditionalParams="noDatetimeStringSync=true" StandardSQL="true" SQLMode="false" UiSchema="">
-    <taggedValue xmi:id="_nQEe4dbTEeiIuP5odK4jMA" tag="Is Conn Need Reload" value="false"/>
+  <TalendMetadata:DatabaseConnection xmi:id="_nQEe4NbTEeiIuP5odK4jMA" name="DW" id="_zpE1MNbOEeiIuP5odK4jMA" label="DW" dataPackage="_nRy9MNbTEeiIuP5odK4jMA" DatabaseType="MySQL" DriverClass="org.gjt.mm.mysql.Driver" URL="jdbc:mysql://51.15.165.50:3306/projet_bi?noDatetimeStringSync=true" dbVersionString="MYSQL_5" Port="3306" Username="projet_bi" Password="8s5j3hAqeaXDw4yeGl1HkQ==" ServerName="51.15.165.50" DatasourceName="" FileFieldName="" SID="projet_bi" SqlSynthax="Syntaxe SQL" DbmsId="mysql_id" ProductId="MYSQL" AdditionalParams="noDatetimeStringSync=true" StandardSQL="true" SQLMode="false" UiSchema="">
+    <taggedValue xmi:id="_nQEe4dbTEeiIuP5odK4jMA" tag="Is Conn Need Reload" value="true"/>
     <taggedValue xmi:id="_nQZPANbTEeiIuP5odK4jMA" tag="package filter" value=""/>
     <taggedValue xmi:id="_nQeukNbTEeiIuP5odK4jMA" tag="Status" value=""/>
     <taggedValue xmi:id="_nQeukdbTEeiIuP5odK4jMA" tag="Version" value="0.1"/>
@@ -10,7 +10,7 @@
     <taggedValue xmi:id="_nQeulNbTEeiIuP5odK4jMA" tag="Author" value=""/>
     <taggedValue xmi:id="_nQeuldbTEeiIuP5odK4jMA" tag="otherParameter"/>
     <taggedValue xmi:id="_nQ_E4NbTEeiIuP5odK4jMA" tag="DB ProductName" value="MySQL"/>
-    <taggedValue xmi:id="_nQ_E4dbTEeiIuP5odK4jMA" tag="DB ProductVersion" value="10.1.26-MariaDB-0+deb9u1"/>
+    <taggedValue xmi:id="_nQ_E4dbTEeiIuP5odK4jMA" tag="DB ProductVersion" value="5.5.5-10.1.26-MariaDB-0+deb9u1"/>
     <taggedValue xmi:id="_nQ_E4tbTEeiIuP5odK4jMA" tag="DB IdentifierQuoteString" value="`"/>
     <parameters xmi:id="_nQEe4tbTEeiIuP5odK4jMA" key="CONN_PARA_KEY_USERNAME" value="projet_bi"/>
     <parameters xmi:id="_uj4VoOfoEeinj4i8a_kGNg" key="CONN_PARA_KEY_MAPRDB_TABLE_NS_MAPPING" value=""/>
@@ -69,7 +69,7 @@
     </ownedElement>
     <ownedElement xsi:type="relational:TdTable" xmi:id="_eg4codkBEeiUO9wBidiUHQ" name="pdv" id="_eg4coNkBEeiUO9wBidiUHQ" label="pdv" tableType="TABLE">
       <taggedValue xmi:id="_eg4cotkBEeiUO9wBidiUHQ" tag="Comment" value=""/>
-      <feature xsi:type="relational:TdColumn" xmi:id="_eg4cpNkBEeiUO9wBidiUHQ" name="id" label="id" length="10" sourceType="INT" talendType="id_Integer" nullable="false">
+      <feature xsi:type="relational:TdColumn" xmi:id="_eg4cpNkBEeiUO9wBidiUHQ" name="id" label="id" length="10" sourceType="INT" talendType="id_Integer" key="true" nullable="false">
         <taggedValue xmi:id="_eg4cpdkBEeiUO9wBidiUHQ" tag="Comment" value=""/>
         <initialValue xsi:type="relational:TdExpression" xmi:id="_eg4cptkBEeiUO9wBidiUHQ" language="COLUMN_DEF"/>
         <sqlDataType xmi:id="_eg4cp9kBEeiUO9wBidiUHQ" name="INT" numericPrecisionRadix="10" javaDataType="4"/>
@@ -156,8 +156,13 @@
         <sqlDataType xmi:id="_ehx0k9kBEeiUO9wBidiUHQ" name="INT" numericPrecisionRadix="10" javaDataType="4"/>
       </feature>
     </ownedElement>
-    <ownedElement xsi:type="relational:TdTable" xmi:id="_pRSrkdbaEeisAOxR0HZF3Q" name="temps_dim" id="_pRSrkNbaEeisAOxR0HZF3Q" label="temps_dim" tableType="TABLE">
+    <ownedElement xsi:type="relational:TdTable" xmi:id="_pRSrkdbaEeisAOxR0HZF3Q" name="temps_dim" properties="deleted&#xA;&#xA;true&#xA;&#xA;" id="_pRSrkNbaEeisAOxR0HZF3Q" label="temps_dim" tableType="TABLE">
       <taggedValue xmi:id="_pRSrktbaEeisAOxR0HZF3Q" tag="Comment" value=""/>
+      <feature xsi:type="relational:TdColumn" xmi:id="_ACgt0OjoEei0w5ddzdz-yw" name="idTemps" label="idTemps" length="19" sourceType="DATETIME" talendType="id_Date" key="true" pattern="&quot;dd-MM-yyyy&quot;">
+        <taggedValue xmi:id="_ACgt0ejoEei0w5ddzdz-yw" tag="Comment" value=""/>
+        <initialValue xsi:type="relational:TdExpression" xmi:id="_ACgt0ujoEei0w5ddzdz-yw" language="COLUMN_DEF"/>
+        <sqlDataType xmi:id="_ACgt0-joEei0w5ddzdz-yw" name="DATETIME" numericPrecisionRadix="10" javaDataType="93" nullable="columnNullable"/>
+      </feature>
       <feature xsi:type="relational:TdColumn" xmi:id="_pRSrlNbaEeisAOxR0HZF3Q" name="jour" label="jour" length="15" sourceType="VARCHAR" talendType="id_String" nullable="false">
         <taggedValue xmi:id="_pRSrldbaEeisAOxR0HZF3Q" tag="Comment" value=""/>
         <initialValue xsi:type="relational:TdExpression" xmi:id="_pRSrltbaEeisAOxR0HZF3Q" language="COLUMN_DEF"/>
@@ -173,15 +178,15 @@
         <initialValue xsi:type="relational:TdExpression" xmi:id="_pRSrntbaEeisAOxR0HZF3Q" language="COLUMN_DEF"/>
         <sqlDataType xmi:id="_pRSrn9baEeisAOxR0HZF3Q" name="INT" numericPrecisionRadix="10" javaDataType="4"/>
       </feature>
-      <feature xsi:type="relational:TdColumn" xmi:id="_pRSroNbaEeisAOxR0HZF3Q" name="semestre" label="semestre" length="25" sourceType="VARCHAR" talendType="id_String" nullable="false">
+      <feature xsi:type="relational:TdColumn" xmi:id="_pRSroNbaEeisAOxR0HZF3Q" name="semestre" label="semestre" length="10" sourceType="INT" talendType="id_Integer" nullable="false">
         <taggedValue xmi:id="_pRSrodbaEeisAOxR0HZF3Q" tag="Comment" value=""/>
         <initialValue xsi:type="relational:TdExpression" xmi:id="_pRSrotbaEeisAOxR0HZF3Q" language="COLUMN_DEF"/>
-        <sqlDataType xmi:id="_pRSro9baEeisAOxR0HZF3Q" name="VARCHAR" numericPrecisionRadix="10" javaDataType="12"/>
+        <sqlDataType xmi:id="_pRSro9baEeisAOxR0HZF3Q" name="INT" numericPrecisionRadix="10" javaDataType="4"/>
       </feature>
-      <feature xsi:type="relational:TdColumn" xmi:id="_pRSrpNbaEeisAOxR0HZF3Q" name="saison" label="saison" length="10" sourceType="INT" talendType="id_Integer" nullable="false">
+      <feature xsi:type="relational:TdColumn" xmi:id="_pRSrpNbaEeisAOxR0HZF3Q" name="saison" label="saison" length="10" sourceType="VARCHAR" talendType="id_String" nullable="false">
         <taggedValue xmi:id="_pRSrpdbaEeisAOxR0HZF3Q" tag="Comment" value=""/>
         <initialValue xsi:type="relational:TdExpression" xmi:id="_pRSrptbaEeisAOxR0HZF3Q" language="COLUMN_DEF"/>
-        <sqlDataType xmi:id="_pRSrp9baEeisAOxR0HZF3Q" name="INT" numericPrecisionRadix="10" javaDataType="4"/>
+        <sqlDataType xmi:id="_pRSrp9baEeisAOxR0HZF3Q" name="VARCHAR" numericPrecisionRadix="10" javaDataType="12"/>
       </feature>
       <feature xsi:type="relational:TdColumn" xmi:id="_pRSrqNbaEeisAOxR0HZF3Q" name="num_jour_mois" label="num_jour_mois" length="10" sourceType="INT" talendType="id_Integer" nullable="false">
         <taggedValue xmi:id="_pRSrqdbaEeisAOxR0HZF3Q" tag="Comment" value=""/>

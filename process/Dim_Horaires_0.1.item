@@ -105,12 +105,13 @@
     <routinesParameter id="_Li5SYNbBEeiT49B_BYO_xw" name="TalendStringUtil"/>
     <routinesParameter id="_LixWkNbBEeiT49B_BYO_xw" name="TalendString"/>
     <routinesParameter id="_yrBWAOjsEeia_p7jjNzoew" name="Horaires"/>
+    <routinesParameter id="_TWqRQOwYEeiJrc7jvOn1cQ" name="HorairesManip"/>
   </parameters>
   <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlInput_2" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_zpE1MNbOEeiIuP5odK4jMA" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MARIADB"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_5"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
     <elementParameter field="TEXT" name="HOST" value="&quot;51.15.165.50&quot;"/>
@@ -134,7 +135,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;noDatetimeStringSync=true&quot;"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="CHECK" name="ENABLE_STREAM" value="false" show="false"/>
+    <elementParameter field="CHECK" name="ENABLE_STREAM" value="false"/>
     <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
     <elementParameter field="TABLE" name="TRIM_COLUMN">
       <elementValue elementRef="SCHEMA_COLUMN" value="heure_ouverture"/>
@@ -262,7 +263,7 @@
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="mapping_horaires" name="mapping_horaires">
-      <column comment="" key="false" length="1" name="id_dim_horaires" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Integer" usefulColumn="true">
+      <column comment="" key="false" length="20" name="id_dim_horaires" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="6" name="horaireOuverture" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -279,7 +280,7 @@
       <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="mapping_horaires">
-        <mapperTableEntries name="id_dim_horaires" expression="Numeric.sequence(&quot;s1&quot;,1,1)" type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="id_dim_horaires" expression="HorairesManip.getHorairesId(row3.heure_ouverture, row3.heure_fermeture, row3.ferme) " type="id_String" nullable="true"/>
         <mapperTableEntries name="horaireOuverture" expression="(row1.ferme.equals(&quot;1&quot;))?&quot;fermé&quot;:(Horaires.isOpenAllTime(row1.heure_ouverture, row1.heure_fermeture)?&quot;24h/24&quot;:row1.heure_ouverture) " type="id_String" nullable="true"/>
         <mapperTableEntries name="horaireFermeture" expression="(row1.ferme.equals(&quot;1&quot;))?&quot;fermé&quot;:(Horaires.isOpenAllTime(row1.heure_ouverture, row1.heure_fermeture)?&quot;24h/24&quot;:row1.heure_fermeture) " type="id_String" nullable="true"/>
         <mapperTableEntries name="ferme" expression="(row1.ferme.equals(&quot;1&quot;))?true:false" type="id_Boolean" nullable="true"/>
@@ -316,7 +317,7 @@
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="mapping_horaires" name="tUniqRow_2">
-      <column comment="" key="false" length="1" name="id_dim_horaires" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Integer" usefulColumn="true">
+      <column comment="" key="false" length="20" name="id_dim_horaires" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="6" name="horaireOuverture" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -330,7 +331,7 @@
       </column>
     </metadata>
     <metadata connector="UNIQUE" label="mapping_horaires" name="UNIQUE">
-      <column comment="" key="false" length="1" name="id_dim_horaires" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Integer" usefulColumn="true">
+      <column comment="" key="false" length="20" name="id_dim_horaires" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="6" name="horaireOuverture" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -344,7 +345,7 @@
       </column>
     </metadata>
     <metadata connector="DUPLICATE" label="mapping_horaires" name="DUPLICATE">
-      <column comment="" key="false" length="1" name="id_dim_horaires" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_Integer" usefulColumn="true">
+      <column comment="" key="false" length="20" name="id_dim_horaires" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="6" name="horaireOuverture" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -362,7 +363,7 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlOutput_1" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_zpE1MNbOEeiIuP5odK4jMA" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MARIADB"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_5"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
     <elementParameter field="TEXT" name="TYPE" value="MYSQL" show="false"/>
@@ -421,7 +422,7 @@
     <elementParameter field="TEXT" name="LABEL" value="DW"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="mapping_horaires" name="tMysqlOutput_1">
-      <column comment="" key="false" length="1" name="id_dim_horaires" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+      <column comment="" key="false" length="20" name="id_dim_horaires" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="6" name="horaireOuverture" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -435,7 +436,7 @@
       </column>
     </metadata>
     <metadata connector="REJECT" label="mapping_horaires" name="REJECT">
-      <column comment="" key="false" length="1" name="id_dim_horaires" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+      <column comment="" key="false" length="20" name="id_dim_horaires" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="6" name="horaireOuverture" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -478,7 +479,7 @@
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="mapping_horaires" name="tLogRow_1">
-      <column comment="" key="false" length="1" name="id_dim_horaires" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+      <column comment="" key="false" length="20" name="id_dim_horaires" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="6" name="horaireOuverture" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
