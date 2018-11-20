@@ -41,6 +41,8 @@ public class HorairesManip {
     	}
     	if(hIsFerme == null || !hIsFerme.equals("1")) {
     		hIsFerme = "0";
+    	} else if (hIsFerme.equals("1")) {
+    		return "1";
     	}
     	
     	
