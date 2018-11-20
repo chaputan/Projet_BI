@@ -1,7 +1,5 @@
 package routines;
 
-import javax.swing.event.ListSelectionEvent;
-
 /*
  * user specification: the function's comment should contain keys as follows: 1. write about the function's comment.but
  * it must be before the "{talendTypes}" key.
@@ -20,29 +18,38 @@ import javax.swing.event.ListSelectionEvent;
  * 
  * 5. {example} gives a example for the Function. it is optional.
  */
-public class service {
+public class HorairesManip {
 
-    /**
-     * getServiceId: Retourne l'ID d'un service en fonction de son nom
-     * 
+	/**
+     * getHorairesId: Retourne l'ID d'un horaires en fonction de ses infos
      * 
      * {talendTypes} String
      * 
      * {Category} User Defined
      * 
-     * {param} string("Aire de gonflage") input: Nom du service
+     * {param} string input: Heure d'ouverture
+     * {param} string input: Heure de fermeture
+     * {param} string input: Station fermé
      * 
-     * {example} getServiceId("Aire de gonflage") # return "16Adg"
      */
-    public static String getServiceId(String nom) {
-    	if(nom == null || nom.equals("")) {
-    		return null;
+    public static String getHorairesId(String hOuvert, String hFerme, String hIsFerme) {
+    	if(hOuvert == null) {
+    		hOuvert = "";
     	}
-    	String id = Integer.toString(nom.length());
-        String[] termes = nom.toLowerCase().split(" ");
-        for (String terme : termes) {
-        	id += terme.substring(0, 1);
-        }
-        return id;
+    	if(hFerme == null) {
+    		hFerme = "";
+    	}
+    	if(hIsFerme == null || !hIsFerme.equals("1")) {
+    		hIsFerme = "0";
+    	}
+    	
+    	
+    	String res = hOuvert+"+"+hFerme+"+"+hIsFerme;
+    	
+    	if(res.equals("++0")) {
+    		return null;
+    	} else {
+    		return res;
+    	}
     }
 }
