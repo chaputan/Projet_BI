@@ -35,6 +35,9 @@ public class service {
      * {example} getServiceId("Aire de gonflage") # return "16Adg"
      */
     public static String getServiceId(String nom) {
+    	if(nom == null || nom.equals("")) {
+    		return null;
+    	}
     	String id = Integer.toString(nom.length());
         String[] termes = nom.toLowerCase().split(" ");
         for (String terme : termes) {
