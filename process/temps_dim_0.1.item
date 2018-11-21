@@ -134,7 +134,7 @@
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="temps_dim" name="Temps">
-      <column comment="" key="true" length="-1" name="idTemps" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" originalLength="10" usefulColumn="true"/>
+      <column comment="" key="true" length="-1" name="id_dim_temps" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" originalLength="10" usefulColumn="true"/>
       <column comment="" key="false" length="15" name="jour" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -159,7 +159,7 @@
       <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="Temps">
-        <mapperTableEntries name="idTemps" expression="row1.date " type="id_Date" nullable="true"/>
+        <mapperTableEntries name="id_dim_temps" expression="row1.date " type="id_Date" nullable="true"/>
         <mapperTableEntries name="jour" expression="TalendDate.formatDate(&quot;EEEE&quot;,row1.date)" type="id_String"/>
         <mapperTableEntries name="mois" expression="TalendDate.formatDate(&quot;MMMM&quot;,row1.date)" type="id_String"/>
         <mapperTableEntries name="annee" expression="TalendDate.getPartOfDate(&quot;YEAR&quot;,row1.date) " type="id_Integer"/>
@@ -207,7 +207,7 @@
     <elementParameter field="TABLE" name="ADD_COLS"/>
     <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="idTemps"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="id_dim_temps"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -252,7 +252,7 @@
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="temps_dim" name="tMysqlOutput_2">
-      <column comment="" key="true" length="-1" name="idTemps" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="DATE" type="id_Date" originalLength="10" usefulColumn="true"/>
+      <column comment="" key="true" length="-1" name="id_dim_temps" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="DATETIME" type="id_Date" originalLength="10" usefulColumn="true"/>
       <column comment="" key="false" length="15" name="jour" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -274,7 +274,7 @@
       <additionalProperties key="Comment" value=""/>
     </metadata>
     <metadata connector="REJECT" label="temps_dim" name="REJECT">
-      <column comment="" key="true" length="-1" name="idTemps" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="DATE" type="id_Date" originalLength="10" usefulColumn="true"/>
+      <column comment="" key="true" length="-1" name="id_dim_temps" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="DATETIME" type="id_Date" originalLength="10" usefulColumn="true"/>
       <column comment="" key="false" length="15" name="jour" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -312,7 +312,7 @@
     <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false"/>
     <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false"/>
     <elementParameter field="TABLE" name="LENGTHS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="idTemps"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="id_dim_temps"/>
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="jour"/>
       <elementValue elementRef="LENGTH" value="10"/>
@@ -331,7 +331,7 @@
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="temps_dim" name="tLogRow_1">
-      <column comment="" key="true" length="-1" name="idTemps" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="DATE" type="id_Date" originalLength="10" usefulColumn="true"/>
+      <column comment="" key="true" length="-1" name="id_dim_temps" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="DATETIME" type="id_Date" originalLength="10" usefulColumn="true"/>
       <column comment="" key="false" length="15" name="jour" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -359,7 +359,7 @@
   </connection>
   <connection connectorName="FLOW" label="Temps" lineStyle="0" metaname="Temps" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tMysqlOutput_2">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
-      <elementValue elementRef="TRACE_COLUMN" value="idTemps"/>
+      <elementValue elementRef="TRACE_COLUMN" value="id_dim_temps"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
