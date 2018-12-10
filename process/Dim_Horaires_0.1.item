@@ -277,7 +277,7 @@
       </column>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="mapping_horaires">
         <mapperTableEntries name="id_dim_horaires" expression="HorairesManip.getHorairesId(row3.heure_ouverture, row3.heure_fermeture, row3.ferme) " type="id_String" nullable="true"/>
@@ -298,7 +298,7 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tUniqRow_2" show="false"/>
     <elementParameter field="TABLE" name="UNIQUE_KEY">
       <elementValue elementRef="SCHEMA_COLUMN" value="id_dim_horaires"/>
-      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
+      <elementValue elementRef="KEY_ATTRIBUTE" value="true"/>
       <elementValue elementRef="CASE_SENSITIVE" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="horaire_ouverture"/>
       <elementValue elementRef="KEY_ATTRIBUTE" value="true"/>
