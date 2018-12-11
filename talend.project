@@ -97,6 +97,24 @@
       <relatedItems xmi:id="_Tccv-da-EeiIuP5odK4jMA" id="TalendDate" version="Latest" type="routine"/>
       <relatedItems xmi:id="_Tccv-ta-EeiIuP5odK4jMA" id="Mathematical" version="Latest" type="routine"/>
     </ItemsRelations>
+    <ItemsRelations xmi:id="_vCzL4P1VEeiQNdjEn0jcwg">
+      <baseItem xmi:id="_vCzL4f1VEeiQNdjEn0jcwg" id="_w1uF0NgYEeicz95KFQcRhg" version="0.1" type="job"/>
+      <relatedItems xmi:id="_vCzL4v1VEeiQNdjEn0jcwg" id="_iKlygNg2EeiBbrr3fKqjbA" version="Latest" type="property"/>
+      <relatedItems xmi:id="_vCzL4_1VEeiQNdjEn0jcwg" id="_zpE1MNbOEeiIuP5odK4jMA" version="Latest" type="property"/>
+      <relatedItems xmi:id="_vCzL5P1VEeiQNdjEn0jcwg" id="Numeric" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_vCzL5f1VEeiQNdjEn0jcwg" id="TalendString" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_vCzL5v1VEeiQNdjEn0jcwg" id="DataOperation" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_vCzL5_1VEeiQNdjEn0jcwg" id="StringHandling" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_vCzL6P1VEeiQNdjEn0jcwg" id="TalendDataGenerator" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_vCzL6f1VEeiQNdjEn0jcwg" id="TalendDate" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_vCzL6v1VEeiQNdjEn0jcwg" id="Mathematical" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_vCzL6_1VEeiQNdjEn0jcwg" id="Relational" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_vCzL7P1VEeiQNdjEn0jcwg" id="TalendStringUtil" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_vCzL7f1VEeiQNdjEn0jcwg" id="_iKlygNg2EeiBbrr3fKqjbA - fermetures" version="Latest" type="schema"/>
+      <relatedItems xmi:id="_vCzL7v1VEeiQNdjEn0jcwg" id="_zpE1MNbOEeiIuP5odK4jMA - pdv" version="Latest" type="schema"/>
+      <relatedItems xmi:id="_vCzL7_1VEeiQNdjEn0jcwg" id="_iKlygNg2EeiBbrr3fKqjbA - carburants" version="Latest" type="schema"/>
+      <relatedItems xmi:id="_vCzL8P1VEeiQNdjEn0jcwg" id="_iKlygNg2EeiBbrr3fKqjbA - ruptures" version="Latest" type="schema"/>
+    </ItemsRelations>
     <migrationTask xmi:id="_OED1INahEei7tdfXkHIDww" id="org.talend.designer.core.ui.preferences.migration.ChangeMysqlVersionForProjectSetting" breaks="5.2.0" version="5.1.3" status="ok"/>
     <migrationTask xmi:id="_OED1IdahEei7tdfXkHIDww" id="org.talend.designer.core.ui.preferences.migration.ChangeOracleVersionForProjectSetting" breaks="5.2.0" version="5.2.1" status="ok"/>
     <migrationTask xmi:id="_OED1ItahEei7tdfXkHIDww" id="org.talend.designer.maven.ui.ConfigMavenRepositoryRemove" breaks="6.0.1" version="6.0.2" status="ok"/>
