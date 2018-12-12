@@ -40,6 +40,10 @@ public class fonctions_fait {
         Date dateFin = null;
         Date dateActuelle = null;
         
+        if(rawDateActuelle == null || rawDateActuelle.equals("")) {
+        	return true; // Si pas de date de maj, station fermée
+        }
+        
     	if(rawDateDebut == null || rawDateDebut.equals("")) {
     		return false;
     	} else if(rawDateFin == null || rawDateFin.equals("")) {
@@ -57,5 +61,32 @@ public class fonctions_fait {
         } else {
         	return false;
         }
+    }
+    
+    /**
+     * afficheFlagFermeture: Formate le type complet de la fermeture à partir d'un flag.
+     * 
+     * 
+     * {talendTypes} String
+     * 
+     * {Category} User Defined
+     * 
+     * {param} flagFermeture string: Lettre définissant la fermeture.
+     * 
+     */
+    public static String afficheFlagFermeture(String flagFermeture) {
+        if(flagFermeture == null || flagFermeture.equals("")) {
+        	return "Non";
+        }
+        
+        if(flagFermeture.equals("T")) {
+        	return "Temporaire";
+        }
+        
+        if(flagFermeture.equals("D")) {
+        	return "Définitive";
+        }
+        
+        return flagFermeture;
     }
 }
