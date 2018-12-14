@@ -1,0 +1,80 @@
+package routines;
+
+import java.util.Date;
+
+/*
+ * user specification: the function's comment should contain keys as follows: 1. write about the function's comment.but
+ * it must be before the "{talendTypes}" key.
+ * 
+ * 2. {talendTypes} 's value must be talend Type, it is required . its value should be one of: String, char | Character,
+ * long | Long, int | Integer, boolean | Boolean, byte | Byte, Date, double | Double, float | Float, Object, short |
+ * Short
+ * 
+ * 3. {Category} define a category for the Function. it is required. its value is user-defined .
+ * 
+ * 4. {param} 's format is: {param} <type>[(<default value or closed list values>)] <name>[ : <comment>]
+ * 
+ * <type> 's value should be one of: string, int, list, double, object, boolean, long, char, date. <name>'s value is the
+ * Function's parameter name. the {param} is optional. so if you the Function without the parameters. the {param} don't
+ * added. you can have many parameters for the Function.
+ * 
+ * 5. {example} gives a example for the Function. it is optional.
+ */
+public class Horaires {
+
+    /**
+     * helloExample: met les valeurs d'ouverture et de fermeture à minuit si ouvert 24h/24
+     * 
+     * 
+     * {talendTypes} String
+     * 
+     * {Category} User Defined
+     * 
+     * {param} string("7.30") input: Horaire d'ouverture à 7h30
+     * 
+     * {example} setOpenClose("7.30", "12.30") # hello world !.
+     */
+    public static boolean isOpenAllTime(String ouverture, String fermeture) {
+        if (ouverture == null || fermeture == null) {
+            return false;
+        }
+        /*
+        long minOuverture = TalendDate.parseDate("HH.mm", ouverture).getTime();
+        long minFermeture = TalendDate.parseDate("HH.mm", fermeture).getTime();
+        if(Math.abs(minOuverture - minFermeture)<15*60*1000)
+        	return true;
+        */
+        int heureOuverture = 0, heureFermeture = 0, minuteOuverture = 0, minuteFermeture = 0;
+        if(ouverture.contains(".") && fermeture.contains(".")){
+        	heureOuverture = Integer.valueOf(ouverture.substring(0,2));
+            heureFermeture = Integer.valueOf(fermeture.substring(0,2));
+            minuteOuverture = Integer.valueOf(ouverture.substring(3,5));
+            minuteFermeture = Integer.valueOf(fermeture.substring(3,5));
+        }
+        
+        // Même heure
+        if (heureOuverture == heureFermeture && Math.abs(minuteFermeture - minuteOuverture) <= 15)
+        	return true;
+        /*
+        if (heureOuverture == heureFermeture && Math.abs(minuteOuverture - minuteFermeture) <= 15)
+        	return true;
+        */
+        // Une heure de décalage
+        if (heureFermeture + 1 == heureOuverture && Math.abs(minuteOuverture +60 - minuteFermeture) <=15)
+        	return true;
+        
+        if (heureOuverture + 1 == heureFermeture && Math.abs(minuteFermeture +60 - minuteOuverture) <=15)
+        	return true;
+        
+        // Changement de jour
+        if (heureFermeture == 23 && heureOuverture == 0
+        		&& Math.abs(minuteOuverture +60 - minuteFermeture) <=15)
+        	return true;
+        
+        if (heureOuverture == 23 && heureFermeture == 0
+        		&& Math.abs(minuteFermeture +60 - minuteOuverture) <=15)
+        	return true;
+        
+        return false;
+    }
+}
