@@ -107,7 +107,7 @@
   </parameters>
   <node componentName="tFileInputXML" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputXML_1" show="false"/>
-    <elementParameter field="FILE" name="FILENAME" value="&quot;C:/Documents/PrixCarburants_annuel_2018.xml&quot;"/>
+    <elementParameter field="FILE" name="FILENAME" value="&quot;C:/TOS_DI-Win32-20170623_1246-V6.4.1/workspace/PROJET_BI/PrixCarburants_annuel_2018.xml&quot;"/>
     <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/pdv_liste/pdv&quot;"/>
     <elementParameter field="TABLE" name="MAPPING">
       <elementValue elementRef="SCHEMA_COLUMN" value="id"/>
@@ -342,17 +342,15 @@
   </node>
   <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="960" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlOutput_1" show="false"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_iKlygNg2EeiBbrr3fKqjbA" show="false"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_5"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
     <elementParameter field="TEXT" name="TYPE" value="MYSQL" show="false"/>
-    <elementParameter field="TEXT" name="HOST" value="&quot;localhost&quot;"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;51.15.165.50&quot;"/>
     <elementParameter field="TEXT" name="PORT" value="&quot;3306&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;essencexml&quot;"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;root&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="0RMsyjmybrE="/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;projet_bi&quot;"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;projet_bi&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" value="neX/QqZ9kJnoX44jCE8LKQ=="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;carburants&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
@@ -505,7 +503,7 @@
   </node>
   <node componentName="tFileInputXML" componentVersion="0.102" offsetLabelX="0" offsetLabelY="8" posX="160" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputXML_3" show="false"/>
-    <elementParameter field="FILE" name="FILENAME" value="&quot;C:/Documents/PrixCarburants_annuel_2018.xml&quot;"/>
+    <elementParameter field="FILE" name="FILENAME" value="&quot;C:/TOS_DI-Win32-20170623_1246-V6.4.1/workspace/PROJET_BI/PrixCarburants_annuel_2018.xml&quot;"/>
     <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/pdv_liste/pdv/services/service&quot;"/>
     <elementParameter field="TABLE" name="MAPPING">
       <elementValue elementRef="SCHEMA_COLUMN" value="id"/>
@@ -545,7 +543,7 @@
   </node>
   <node componentName="tFileInputXML" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="352" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputXML_4" show="false"/>
-    <elementParameter field="FILE" name="FILENAME" value="&quot;C:/Documents/PrixCarburants_annuel_2018.xml&quot;"/>
+    <elementParameter field="FILE" name="FILENAME" value="&quot;C:/TOS_DI-Win32-20170623_1246-V6.4.1/workspace/PROJET_BI/PrixCarburants_annuel_2018.xml&quot;"/>
     <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/pdv_liste/pdv/rupture&quot;"/>
     <elementParameter field="TABLE" name="MAPPING">
       <elementValue elementRef="SCHEMA_COLUMN" value="id"/>
@@ -600,7 +598,7 @@
   </node>
   <node componentName="tFileInputXML" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="800" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputXML_6" show="false"/>
-    <elementParameter field="FILE" name="FILENAME" value="&quot;C:/Documents/PrixCarburants_annuel_2018.xml&quot;"/>
+    <elementParameter field="FILE" name="FILENAME" value="&quot;C:/TOS_DI-Win32-20170623_1246-V6.4.1/workspace/PROJET_BI/PrixCarburants_annuel_2018.xml&quot;"/>
     <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/pdv_liste/pdv/horaires/jour/horaire&quot;"/>
     <elementParameter field="TABLE" name="MAPPING">
       <elementValue elementRef="SCHEMA_COLUMN" value="id"/>
@@ -665,7 +663,7 @@
   </node>
   <node componentName="tFileInputXML" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="576" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileInputXML_5" show="false"/>
-    <elementParameter field="FILE" name="FILENAME" value="&quot;C:/Documents/PrixCarburants_annuel_2018.xml&quot;"/>
+    <elementParameter field="FILE" name="FILENAME" value="&quot;C:/TOS_DI-Win32-20170623_1246-V6.4.1/workspace/PROJET_BI/PrixCarburants_annuel_2018.xml&quot;"/>
     <elementParameter field="TEXT" name="LOOP_QUERY" value="&quot;/pdv_liste/pdv/fermeture&quot;"/>
     <elementParameter field="TABLE" name="MAPPING">
       <elementValue elementRef="SCHEMA_COLUMN" value="id"/>
@@ -831,7 +829,7 @@
     <elementParameter field="TEXT" name="USER" value="&quot;projet_bi&quot;"/>
     <elementParameter field="PASSWORD" name="PASS" value="neX/QqZ9kJnoX44jCE8LKQ=="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;pdv&quot;"/>
-    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
     <elementParameter field="TECHNICAL" name="SCHEMA_FLOW:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
     <elementParameter field="TECHNICAL" name="SCHEMA_FLOW:REPOSITORY_SCHEMA_TYPE" value="_zpE1MNbOEeiIuP5odK4jMA - pdv" show="false"/>
@@ -949,19 +947,17 @@
   </node>
   <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="736" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlOutput_3" show="false"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_iKlygNg2EeiBbrr3fKqjbA" show="false"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_5"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
     <elementParameter field="TEXT" name="TYPE" value="MYSQL" show="false"/>
-    <elementParameter field="TEXT" name="HOST" value="&quot;localhost&quot;"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;51.15.165.50&quot;"/>
     <elementParameter field="TEXT" name="PORT" value="&quot;3306&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;essencexml&quot;"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;root&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="0RMsyjmybrE="/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;projet_bi&quot;"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;projet_bi&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" value="neX/QqZ9kJnoX44jCE8LKQ=="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;services&quot;"/>
-    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CLEAR"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
@@ -1022,19 +1018,17 @@
   </node>
   <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="576" posY="96">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlOutput_4" show="false"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_iKlygNg2EeiBbrr3fKqjbA" show="false"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_5"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
     <elementParameter field="TEXT" name="TYPE" value="MYSQL" show="false"/>
-    <elementParameter field="TEXT" name="HOST" value="&quot;localhost&quot;"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;51.15.165.50&quot;"/>
     <elementParameter field="TEXT" name="PORT" value="&quot;3306&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;essencexml&quot;"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;root&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="0RMsyjmybrE="/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;projet_bi"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;projet_bi&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" value="neX/QqZ9kJnoX44jCE8LKQ=="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ruptures&quot;"/>
-    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CLEAR"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
     <elementParameter field="TECHNICAL" name="SCHEMA_FLOW:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
     <elementParameter field="TECHNICAL" name="SCHEMA_FLOW:REPOSITORY_SCHEMA_TYPE" value="_iKlygNg2EeiBbrr3fKqjbA - ruptures" show="false"/>
@@ -1119,19 +1113,17 @@
   </node>
   <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="384" posY="128">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlOutput_5" show="false"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_iKlygNg2EeiBbrr3fKqjbA" show="false"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_5"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
     <elementParameter field="TEXT" name="TYPE" value="MYSQL" show="false"/>
-    <elementParameter field="TEXT" name="HOST" value="&quot;localhost&quot;"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;51.15.165.50&quot;"/>
     <elementParameter field="TEXT" name="PORT" value="&quot;3306&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;essencexml&quot;"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;root&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="0RMsyjmybrE="/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;projet_bi&quot;"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;projet_bi&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" value="neX/QqZ9kJnoX44jCE8LKQ=="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;fermetures&quot;"/>
-    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CLEAR"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
     <elementParameter field="TECHNICAL" name="SCHEMA_FLOW:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
     <elementParameter field="TECHNICAL" name="SCHEMA_FLOW:REPOSITORY_SCHEMA_TYPE" value="_iKlygNg2EeiBbrr3fKqjbA - fermetures" show="false"/>
@@ -1216,19 +1208,17 @@
   </node>
   <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="6" posX="960" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlOutput_6" show="false"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_iKlygNg2EeiBbrr3fKqjbA" show="false"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_5"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
     <elementParameter field="TEXT" name="TYPE" value="MYSQL" show="false"/>
-    <elementParameter field="TEXT" name="HOST" value="&quot;localhost&quot;"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;51.15.165.50&quot;"/>
     <elementParameter field="TEXT" name="PORT" value="&quot;3306&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;essencexml&quot;"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;root&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="0RMsyjmybrE="/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;projet_bi&quot;"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;projet_bi&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" value="neX/QqZ9kJnoX44jCE8LKQ=="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;horaires&quot;"/>
-    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CLEAR"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>

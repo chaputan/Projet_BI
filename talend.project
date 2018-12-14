@@ -99,7 +99,6 @@
     </ItemsRelations>
     <ItemsRelations xmi:id="_vCzL4P1VEeiQNdjEn0jcwg">
       <baseItem xmi:id="_vCzL4f1VEeiQNdjEn0jcwg" id="_w1uF0NgYEeicz95KFQcRhg" version="0.1" type="job"/>
-      <relatedItems xmi:id="_vCzL4v1VEeiQNdjEn0jcwg" id="_iKlygNg2EeiBbrr3fKqjbA" version="Latest" type="property"/>
       <relatedItems xmi:id="_vCzL4_1VEeiQNdjEn0jcwg" id="_zpE1MNbOEeiIuP5odK4jMA" version="Latest" type="property"/>
       <relatedItems xmi:id="_vCzL5P1VEeiQNdjEn0jcwg" id="Numeric" version="Latest" type="routine"/>
       <relatedItems xmi:id="_vCzL5f1VEeiQNdjEn0jcwg" id="TalendString" version="Latest" type="routine"/>
