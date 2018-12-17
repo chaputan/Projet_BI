@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.relational="http:///orgomg/cwm/resource/relational.ecore">
+  <TalendMetadata:DatabaseConnection xmi:id="_pzy1UNbSEei6Tv5EoXwcuw" name="BDBI" id="_BmRd8NbREei6Tv5EoXwcuw" label="BDBI" dataPackage="_4IU90OfcEeilIel4h6sghg _4IU90efcEeilIel4h6sghg" DatabaseType="MySQL" DriverClass="org.mariadb.jdbc.Driver" URL="jdbc:mariadb://51.15.165.50:3306/?noDatetimeStringSync=true" dbVersionString="MARIADB" Port="3306" Username="projet_bi" Password="8s5j3hAqeaXDw4yeGl1HkQ==" ServerName="51.15.165.50" DatasourceName="" FileFieldName="" SID="" SqlSynthax="Syntaxe SQL" DbmsId="mysql_id" ProductId="MYSQL" AdditionalParams="noDatetimeStringSync=true" StandardSQL="true" SQLMode="false" UiSchema="">
+    <taggedValue xmi:id="_pz0DcNbSEei6Tv5EoXwcuw" tag="Is Conn Need Reload" value="false"/>
+    <taggedValue xmi:id="_p0DUANbSEei6Tv5EoXwcuw" tag="package filter" value=""/>
+    <taggedValue xmi:id="_p0NFANbSEei6Tv5EoXwcuw" tag="Status" value=""/>
+    <taggedValue xmi:id="_p0NFAdbSEei6Tv5EoXwcuw" tag="Version" value="0.1"/>
+    <taggedValue xmi:id="_p0NFAtbSEei6Tv5EoXwcuw" tag="Purpose" value=""/>
+    <taggedValue xmi:id="_p0NFA9bSEei6Tv5EoXwcuw" tag="Description" value=""/>
+    <taggedValue xmi:id="_p0NFBNbSEei6Tv5EoXwcuw" tag="Author" value=""/>
+    <taggedValue xmi:id="_p0NFBdbSEei6Tv5EoXwcuw" tag="otherParameter"/>
+    <taggedValue xmi:id="_n5-XgNbTEei6Tv5EoXwcuw" tag="DB ProductName" value="MySQL"/>
+    <taggedValue xmi:id="_n5-XgdbTEei6Tv5EoXwcuw" tag="DB ProductVersion" value="10.1.26-MariaDB-0+deb9u1"/>
+    <taggedValue xmi:id="_n5-XgtbTEei6Tv5EoXwcuw" tag="DB IdentifierQuoteString" value="`"/>
+    <parameters xmi:id="_pz0DcdbSEei6Tv5EoXwcuw" key="CONN_PARA_KEY_USERNAME" value="projet_bi"/>
+    <parameters xmi:id="_v7TmINbSEei6Tv5EoXwcuw" key="CONN_PARA_KEY_MAPRDB_TABLE_NS_MAPPING" value=""/>
+  </TalendMetadata:DatabaseConnection>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_4IU90OfcEeilIel4h6sghg" name="information_schema" dataManager="_pzy1UNbSEei6Tv5EoXwcuw"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_4IU90efcEeilIel4h6sghg" name="projet_bi" dataManager="_pzy1UNbSEei6Tv5EoXwcuw"/>
+</xmi:XMI>

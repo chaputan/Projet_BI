@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:DelimitedFileConnection xmi:id="_dXdCsOfkEeilIel4h6sghg" name="marque" dataPackage="_dXdCsefkEeilIel4h6sghg" Server="Localhost 127.0.0.1" FilePath="C:/Users/Epulapp/Downloads/prix_des_carburants_stations.csv" Encoding="UTF-8" FieldSeparatorValue="&quot;;&quot;" RowSeparatorValue="&quot;\n&quot;" UseHeader="true" HeaderValue="1" FirstLineCaption="true"/>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_dXdCsefkEeilIel4h6sghg" name="default" dataManager="_dXdCsOfkEeilIel4h6sghg">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_dXdCsufkEeilIel4h6sghg" id="_KxHZsOfkEeilIel4h6sghg" label="marque">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dXdpwOfkEeilIel4h6sghg" label="Identifiant" length="8" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dXdpwefkEeilIel4h6sghg" label="Geo_Point" length="30" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dXdpwufkEeilIel4h6sghg" label="Marque" length="25" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dXdpw-fkEeilIel4h6sghg" label="Nom" length="42" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>
